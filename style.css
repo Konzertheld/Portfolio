@@ -1,0 +1,96 @@
+html, body, #wrapper, #imagebox {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #000;
+	color: #ddd;
+}
+
+a {
+	text-decoration: none;
+	color: #ddd;
+}
+
+img {
+	border: 0;
+}
+
+#wrapper {
+	min-height: 100%;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	background-color: #222;
+}
+
+#menu {
+	width: 100%;
+	height: 43px;
+	background-color: #111;
+}
+
+.menuelement {
+	width:100px;
+	padding:10px;
+	display:block;
+	color:#ccc;
+	text-decoration:none;
+	font-size:20px;
+	text-align:center;
+	float:left;
+}
+
+.menuelement.selected {
+	color:#111;
+	background-color:#ccc;
+}
+
+#imagebox {
+	width:100%;
+	padding:30px 10px 100px 0;
+}
+
+.post {
+	height:280px;
+	width:280px;
+	margin:0 0 20px 30px;
+	display:inline-block;
+	float:left;
+	text-align:center;
+	line-height:280px;
+	background-color: #222;
+}
+
+.post .contentpreview {
+	max-width:260px;
+	max-height:260px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	word-wrap:break-word;
+	font-size:24pt;
+	line-height:30pt;
+}
+
+.ownerline {
+	font-size: 16pt;
+	line-height: 20pt;
+	margin-top: 20px;
+}
+
+#stickyfooter {
+	width:100%;
+	position:relative;
+	margin-top:-100px;
+	height:100px;
+	background-color:#222;
+}
