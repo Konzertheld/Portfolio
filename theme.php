@@ -120,7 +120,6 @@ class Portfolio extends Theme
 	  {
 		$filters['content_type'] = Utils::single_array( $filters['content_type'] );
 		$filters['content_type'][] = Post::type('image');
-		$filters['content_type'][] = Post::type('blogroll');
 	  }
 	  return $filters;
 	}
