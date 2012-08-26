@@ -1,4 +1,4 @@
-html, body, #wrapper, #imagebox {
+html, body, #wrapper, #imagebox, h1 {
 	margin: 0;
 }
 
@@ -26,8 +26,13 @@ img {
 
 #header {
 	width: 100%;
-	height: 100px;
+	height: 200px;
 	background-color: #222;
+	text-align: center;
+}
+#header img {
+	margin-top: 10px;
+	height: 180px;
 }
 
 #menu {
@@ -54,7 +59,7 @@ img {
 
 #imagebox {
 	width:100%;
-	padding:30px 10px 100px 0;
+	padding:30px 10px 50px 0;
 }
 
 .post {
@@ -90,7 +95,8 @@ img {
 #stickyfooter {
 	width:100%;
 	position:relative;
-	margin-top:-100px;
-	height:100px;
-	background-color:#222;
+	margin-top:-50px;
+	height:50px;
+	color: #eee;
+	padding-left: 10px;
 }
