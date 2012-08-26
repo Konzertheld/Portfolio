@@ -31,22 +31,18 @@ class Portfolio extends Theme
 	
 	public function action_form_publish($form, $post, $context)
 	{
-	  if ($form->content_type->value == Post::type('image')) {
 		$form->insert('tags', 'text', 'thumbnail_url', 'null:null', _t('Thumbnail URL'), 'admincontrol_textArea');
 		$form->thumbnail_url->value = $post->info->thumbnail_url;
 		$form->thumbnail_url->template = 'admincontrol_text';
 		$form->insert('tags', 'text', 'fullsize_url', 'null:null', _t('Fullsize URL'), 'admincontrol_textArea');
 		$form->fullsize_url->value = $post->info->fullsize_url;
 		$form->fullsize_url->template = 'admincontrol_text';
-	  }
 	}
 	
 	public function action_publish_post( $post, $form )
 	{
-	  if ($post->content_type == Post::type('image')) {
 		$post->info->thumbnail_url = $form->thumbnail_url->value;
 		$post->info->fullsize_url = $form->fullsize_url->value;
-	  }
 	}
 	
 	public function action_admin_header($theme)
@@ -95,6 +91,18 @@ class Portfolio extends Theme
 		$out = '<ul>' . implode('', $array_out) . '</ul>';
 		return $out;
  	}
+	
+	public function filter_post_title_out($title, $post)
+	{
+		if(isset($post->info->thumbnail_url))
+		{
+			return "<img src='" . $post->info->thumbnail_url . "' alt='$title' title='$title'>";
+		}
+		else
+		{
+			return $title;
+		}
+	}
 	
 	public function filter_post_type_display($type, $foruse) 
 	{ 
