@@ -12,7 +12,7 @@ body {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #ddd;
 }
 
@@ -84,6 +84,11 @@ img {
 	word-wrap:break-word;
 	font-size:24pt;
 	line-height:30pt;
+}
+
+.contentarea {
+	background-color: #222;
+	padding: 30px;
 }
 
 .single {
