@@ -13,4 +13,16 @@
 	<copyright>2012</copyright>
 	
 	<template_engine>rawphpengine</template_engine>
+	
+	<areas>
+		<area name="header">
+			<description><![CDATA[The header area]]></description>
+		</area>
+		<area name="menubar">
+			<description><![CDATA[The navigation area]]></description>
+		</area>
+		<area name="footer">
+			<description><![CDATA[The footer area]]></description>
+		</area>
+  </areas>
 </pluggable>
