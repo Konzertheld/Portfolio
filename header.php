@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<meta name="generator" content="Habari <?php echo Version::get_habariversion() ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php Site::out_url( 'theme' ); ?>/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="<?php Site::out_url( 'theme' ); ?>/user.css" media="screen" />
 	<?php echo $theme->header(); ?>
 </head>
 
