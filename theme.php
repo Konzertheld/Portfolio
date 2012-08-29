@@ -96,12 +96,20 @@ class Portfolio extends Theme
 	{
 		if(isset($post->info->thumbnail_url))
 		{
-			return "<img src='" . $post->info->thumbnail_url . "' alt='$title' title='$title'>";
+			return "<img src='" . $post->info->thumbnail_url_out . "' alt='$title' title='$title'>";
 		}
 		else
 		{
 			return $title;
 		}
+	}
+	
+	public function filter_post_info_thumbnail_url_out($url)
+	{
+		if(substr($url, 0, 1) == "/")
+			return Site::get_url('user') . $url;
+		else
+			return $url;
 	}
 	
 	public function filter_post_type_display($type, $foruse) 
