@@ -8,12 +8,5 @@
 	<link rel="stylesheet" type="text/css" href="<?php Site::out_url( 'theme' ); ?>/user.css" media="screen" />
 	<?php echo $theme->header(); ?>
 </head>
-
 <body>
 	<div id="wrapper">
-		<div id="header">
-			<?php echo $theme->area('header'); ?>
-		</div>
-		<div id="menu">
-				<?php echo $theme->area('menubar'); ?>
-		</div>

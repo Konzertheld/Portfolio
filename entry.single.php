@@ -1,4 +1,5 @@
-<?php include("header.php"); ?>
+<?php $theme->display("header"); ?>
+<?php $theme->display("navigation"); ?>
 		<div class="entry single">
 			<div class="contentarea">
 				<h2 class="posttitle"><?php echo $post->title; ?></h2>
@@ -7,5 +8,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-<?php include("footer.php"); ?>
+<?php $theme->display("footer"); ?>

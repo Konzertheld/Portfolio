@@ -1,4 +1,5 @@
-<?php include("header.php"); ?>
+<?php $theme->display("header"); ?>
+<?php $theme->display("navigation"); ?>
 		<div id="imagebox">
 		<?php
 			foreach ( $posts as $post )
@@ -7,5 +8,4 @@
 			}
 		?>
 		</div>
-	</div>
-<?php include("footer.php"); ?>
+<?php $theme->display("footer"); ?>
