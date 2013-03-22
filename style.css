@@ -116,6 +116,10 @@ img {
 	line-height:260px;
 }
 
+.post .contentpreview iframe {
+	max-width: 260px;
+}
+
 /* Multiple entries */
 
 .post.entry .contentpreview h2, .post .contentpreview p {
