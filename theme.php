@@ -47,5 +47,20 @@ class Portfolio extends Theme
 		$out = '<ul>' . implode('', $array_out) . '</ul>';
 		return $out;
  	}
+	
+	/**
+	 * Provide excerpts to avoid cutting off text when no summary is provided
+	 **/
+	public function filter_post_content_excerpt($text)
+	{
+		if(strlen($text) > 280) {
+			// cut off everything after the word at position 280. Don't use \W so we don't cut HTML tags
+			$rest = preg_replace('/[ .\-]+.*/', '', substr($text, 280));
+			return substr($text, 0, 280) . $rest;
+		}
+		return $text;
+		
+		// Alternative method: Return match[0] from /(\w+\W+){50}/ for the first 50 words
+	}
 }
 ?>

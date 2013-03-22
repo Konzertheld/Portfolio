@@ -1,9 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Quattrocento);
+
 html, body, #wrapper, #imagebox, h1 {
 	margin: 0;
 }
 
 html, body {
 	height: 100%;
+	font-size: 16px;
+	font-family: Quattrocento, serif;
 }
 
 body {
@@ -63,30 +67,6 @@ img {
 	padding:30px 0 50px 0;
 }
 
-.post {
-	height:280px;
-	width:280px;
-	margin:0 0 20px 30px;
-	display:inline-block;
-	float:left;
-	text-align:center;
-	line-height:280px;
-	background-color: #222;
-}
-
-.post .contentpreview {
-	max-width:260px;
-	max-height:260px;
-	vertical-align:middle;
-	display:inline-block;
-	margin:0;
-	padding:0;
-	overflow:hidden;
-	word-wrap:break-word;
-	font-size:24pt;
-	line-height:30pt;
-}
-
 .contentarea {
 	background-color: #222;
 	padding: 30px;
@@ -109,4 +89,50 @@ img {
 	margin-top:-50px;
 	height:50px;
 	color: #eee;
+}
+
+/* Style multiple post */
+
+.post {
+	height:280px;
+	width:280px;
+	margin:0 0 20px 30px;
+	display:inline-block;
+	float:left;
+	text-align:center;
+	line-height:280px;
+	background-color: #222;
+}
+
+.post .contentpreview {
+	max-width:260px;
+	max-height:260px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	word-wrap:break-word;
+	line-height:260px;
+}
+
+/* Multiple entries */
+
+.post.entry .contentpreview h2, .post .contentpreview p {
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.post.entry .contentpreview a {
+	text-decoration: none;
+}
+
+.post.entry .contentpreview h2 {
+	font-size: 18px;
+	vertical-align: top;
+}
+
+.post.entry .contentpreview p {
+	display: inline-block;
 }
