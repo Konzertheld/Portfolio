@@ -22,6 +22,11 @@ class Portfolio extends Theme
 	{
 		
 	}
+	
+	public function action_template_header()
+	{
+		Stack::add('template_header_javascript', Site::get_url('scripts') . '/jquery.js', 'jquery');
+	}
 
 	/**
 	 * Add some variables to the template output
