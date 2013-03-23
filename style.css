@@ -140,3 +140,40 @@ img {
 .post.entry .contentpreview p {
 	display: inline-block;
 }
+
+/* Style single post */
+
+/* Single Photoset */
+
+#photonavigator {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 120px;
+	background-color: #222;
+	text-align: center;
+}
+
+#photonavigator .setphoto {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	height: 120px;
+	line-height: 120px;
+}
+
+#photonavigator .setphoto img {
+	margin: 0 10px 0 0;
+	padding: 0;
+	max-height: 100px;
+	vertical-align: middle;
+}
+
+.photoset {
+	text-align: center;
+}
+
+.photoset .setphoto img {
+	max-width: 1000px;
+	max-height: 650px;
+}
