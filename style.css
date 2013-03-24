@@ -120,26 +120,38 @@ img {
 	max-width: 260px;
 }
 
-/* Multiple entries */
-
-.post.entry .contentpreview h2, .post .contentpreview p {
+.post .contentpreview h2, .post .contentpreview p {
 	line-height: normal;
 	vertical-align: middle;
 	margin: 0;
 }
 
-.post.entry .contentpreview a {
+.post .contentpreview a {
 	text-decoration: none;
 }
 
-.post.entry .contentpreview h2 {
+.post .contentpreview h2 {
 	font-size: 18px;
 	vertical-align: top;
 }
 
-.post.entry .contentpreview p {
+.post .contentpreview p {
 	display: inline-block;
 }
+
+/* Multiple photosets */
+.post.photoset .contentpreview .setphoto {
+	vertical-align: middle;
+	margin: 0;
+	line-height: 240px;
+}
+
+.post.photoset .contentpreview img {
+	max-width: 260px;
+	max-height: 230px;
+	vertical-align: middle;
+}
+
 
 /* Style single post */
 

@@ -26,8 +26,9 @@ class Portfolio extends Theme
 	public function action_template_header($theme)
 	{
 		Stack::add('template_header_javascript', Site::get_url('scripts') . '/jquery.js', 'jquery');
-		// if photoset content type exists
-		Stack::add('template_header_javascript', $theme->get_url() . '/photoset.js', 'photoset-js', 'jquery');
+		if(!$this->multipleview && array_key_exists('photoset', Post::list_active_post_types())) {
+			Stack::add('template_header_javascript', $theme->get_url() . '/photoset.js', 'photoset-js', 'jquery');
+		}
 	}
 
 	/**
@@ -68,6 +69,38 @@ class Portfolio extends Theme
 		return $text;
 		
 		// Alternative method: Return match[0] from /(\w+\W+){50}/ for the first 50 words
+	}
+	
+	/**
+	 * Get a single photo for the multiple photoset view
+	 **/
+	public function filter_post_content_singlesetphoto($content, $post)
+	{
+		$assets = $post->content_media;
+		if(isset($assets)) {
+			// Revert what the plugin did
+			$assetarray = explode("\n", $assets);
+			return $assetarray[array_rand($assetarray)];
+		}
+		return '';
+	}
+	
+	/**
+	 * Add photosets to the output (0.9 method)
+	 */
+	public function filter_template_user_filters( $filters ) 
+	{
+		// Cater for the home page which uses presets as of d918a831
+		if ( isset( $filters['preset'] ) ) {
+			$filters['preset'] = 'photosets';
+		} else {		
+			// Cater for other pages like /page/1 which don't use presets yet
+			if ( isset( $filters['content_type'] ) ) {
+				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
+				$filters['content_type'][] = Post::type( 'photoset' );
+			}
+		}
+		return $filters;
 	}
 }
 ?>
