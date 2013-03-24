@@ -135,6 +135,12 @@ img {
 	vertical-align: top;
 }
 
+.post.entry .contentpreview .contentpreview_center {
+	vertical-align: middle;
+	line-height: 240px;
+	margin: 0;
+}
+
 .post .contentpreview p {
 	display: inline-block;
 }
