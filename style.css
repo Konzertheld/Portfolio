@@ -43,23 +43,6 @@ img {
 	width: 100%;
 	height: 43px;
 	background-color: #111;
-	text-align: center;
-}
-
-.menuelement {
-	width:100px;
-	padding:10px;
-	display:block;
-	color:#ccc;
-	text-decoration:none;
-	font-size:20px;
-	text-align:center;
-	float:left;
-}
-
-.menuelement.selected {
-	color:#111;
-	background-color:#ccc;
 }
 
 #imagebox {
@@ -89,6 +72,33 @@ img {
 	margin-top:-50px;
 	height:50px;
 	color: #eee;
+}
+
+/* Menu plugin styles */
+#menu ol {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+#menu ol li {
+	min-width: 80px;
+	text-align: center;
+	display: inline-block;
+}
+
+#menu ol li a {
+	display: inline-block;
+	color: #ccc;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 10px 20px;
+	height: 23px;
+}
+
+#menu ol li.active a{
+	background-color:#222;
 }
 
 /* Style multiple post */
