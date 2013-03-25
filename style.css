@@ -130,7 +130,7 @@ img {
 	max-width: 260px;
 }
 
-.post .contentpreview h2, .post .contentpreview p {
+.post .contentpreview h2, .post .contentpreview .contentpreview_content {
 	line-height: normal;
 	vertical-align: middle;
 	margin: 0;
@@ -151,7 +151,7 @@ img {
 	margin: 0;
 }
 
-.post .contentpreview p {
+.post .contentpreview .contentpreview_center .contentpreview_content {
 	display: inline-block;
 }
 

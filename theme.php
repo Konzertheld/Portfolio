@@ -14,6 +14,8 @@ class Portfolio extends Theme
 	public function action_init_theme()
 	{
 		Format::apply('autop', 'comment_content_out');
+		Format::apply('autop', 'post_content_excerpt');
+		
 		$this->assign( 'multipleview', false);
 		$action = Controller::get_action();
 		if ($action == 'display_home' || $action == 'display_entries' || $action == 'search' || $action == 'display_tag' || $action == 'display_date') {
