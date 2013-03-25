@@ -170,6 +170,7 @@ img {
 	height: 120px;
 	background-color: #222;
 	text-align: center;
+	overflow: hidden;
 }
 
 #photonavigator .setphoto {
