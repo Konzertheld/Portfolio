@@ -1,3 +1,4 @@
+<?php namespace Habari; ?>
 <!DOCTYPE html>
 <html>
 <head>
