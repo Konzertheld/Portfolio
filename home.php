@@ -2,9 +2,14 @@
 <?php $theme->display("navigation"); ?>
 		<div id="imagebox">
 		<?php
-			foreach ( $posts as $post )
-			{
-				echo $theme->content($post, 'multiple');
+			if(count($theme->get_blocks("content", 0, $theme))) {
+				$theme->area("content");
+			}
+			else {
+				foreach ( $posts as $post )
+				{
+					echo $theme->content($post, 'multiple');
+				}
 			}
 		?>
 		</div>
