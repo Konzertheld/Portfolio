@@ -3,7 +3,7 @@
 		<div id="imagebox">
 		<?php
 			if(count($theme->get_blocks("content", 0, $theme))) {
-				$theme->area("content");
+				echo $theme->area("content");
 			}
 			else {
 				foreach ( $posts as $post )
