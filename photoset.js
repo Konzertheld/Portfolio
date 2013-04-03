@@ -13,3 +13,19 @@ $(document).ready(function() {
 		});
 	});
 });
+
+var hiddenPhotos = new Array();
+
+function navigate_left()
+{
+	$("#photonavigator .setphoto").eq([hiddenPhotos.length]).hide();
+	hiddenPhotos.push($("#photonavigator .setphoto").eq([hiddenPhotos.length]));
+}
+
+function navigate_right()
+{
+	var last = hiddenPhotos.pop();
+	if(last != null) {
+		last.show();
+	}
+}

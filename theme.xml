@@ -3,13 +3,13 @@
 	<name>Portfolio</name>
 	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
 	
-	<author url="http://habariproject.org/">Habari Community</author>
+	<author url="http://christian-gredig.de/">Christian Gredig</author>
 	
-	<version>0.1</version>
-	<url>http://konzertheld.de/</url>
-	<description><![CDATA[Bla.]]></description>
+	<version>1.0</version>
+	<url>http://christian-gredig.de/</url>
+	<description><![CDATA[A simple, yet beautiful theme that focuses on making many types of content look good - in a way that can be presented to not only friends and family, but also potential clients and employers.]]></description>
 
-	<copyright>2012</copyright>
+	<copyright>2012-2013</copyright>
 	
 	<template_engine>rawphpengine</template_engine>
 	
@@ -19,6 +19,9 @@
 		</area>
 		<area name="menubar">
 			<description><![CDATA[The navigation area]]></description>
+		</area>
+		<area name="content">
+			<description><![CDATA[The content area. Will be filled with the newest posts if no blocks are assigned.]]></description>
 		</area>
 		<area name="footer">
 			<description><![CDATA[The footer area]]></description>
