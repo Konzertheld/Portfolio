@@ -184,6 +184,18 @@ img {
 	overflow: hidden;
 }
 
+#navigation {
+	float: left;
+	padding: 0 15px 0 20px;
+}
+
+#photonavigator .navigate {
+	text-decoration: none;
+	font-size: 48px;
+	color: #ccc;
+	display: inline-block;
+}
+
 #photonavigator .setphoto {
 	margin: 0;
 	padding: 0;
