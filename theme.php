@@ -160,7 +160,11 @@ class Portfolio extends Theme
 	{
 		// Cater for the home page which uses presets as of d918a831
 		if ( isset( $filters['preset'] ) ) {
-			$filters['preset'] = 'photosets';
+			if(isset($filters['content_type'])) {
+				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
+			}
+			$filters['content_type'][] = Post::type( 'photosets' );
+			$filters['content_type'][] = Post::type( 'entry' );
 		} else {		
 			// Cater for other pages like /page/1 which don't use presets yet
 			if ( isset( $filters['content_type'] ) ) {
