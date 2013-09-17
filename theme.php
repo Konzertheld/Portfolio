@@ -39,6 +39,9 @@ class Portfolio extends Theme
 		if(!$this->multipleview && array_key_exists('photoset', Post::list_active_post_types())) {
 			Stack::add('template_header_javascript', $theme->get_url() . '/photoset.js', 'photoset-js', 'jquery');
 		}
+		if($this->multipleview && array_key_exists('photo', Post::list_active_post_types())) {
+			Stack::add('template_footer_javascript', $theme->get_url() . 'photo.js', 'photo-js', 'jquery');
+		}
 	}
 	
 	/**
