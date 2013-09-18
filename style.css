@@ -159,7 +159,7 @@ img {
 }
 .post.quote .contentpreview .contentpreview_center {
 	vertical-align: middle;
-	line-height: 240px;
+	line-height: 230px;
 	margin: 0;
 	font-style: italic;
 	font-size: 120%;
@@ -194,6 +194,8 @@ img {
 }
 .post.quote .contentpreview .meta {
 	font-style: normal;
+	margin-top: 10px;
+	font-size: 95%;
 }
 
 /* Photos in multiple elements */
