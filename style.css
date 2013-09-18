@@ -103,7 +103,7 @@ img {
 }
 
 /* Style multiple post */
-
+/* post element - what makes the actual blocks on the site */
 .post {
 	height:280px;
 	width:280px;
@@ -114,15 +114,14 @@ img {
 	line-height:280px;
 	background-color: #222;
 }
-
 .post.photo {
 	background: none;
 }
-
-.post.entry {
+.post.entry, .post.quote {
 	width: 590px;
 }
 
+/* contentpreview element - inside the post to give room for formats */
 .post .contentpreview {
 	max-width:260px;
 	max-height:260px;
@@ -134,36 +133,44 @@ img {
 	word-wrap:break-word;
 	line-height:260px;
 }
-
 .post.photo .contentpreview {
 	max-width: 280px;
 	max-height: 280px;
 }
-
-.post.entry .contentpreview {
+.post.entry .contentpreview, .post.quote .contentpreview {
 	width: 570px;
 	max-width: 570px;
 	height: 100%;
 }
 
+/* inside the contentpreview element - the actual content, individually designed per content type */
 .post.entry .contentpreview iframe {
 	max-width: 570px;
 }
-
-.post .contentpreview h2, .post .contentpreview .contentpreview_content {
+.post .contentpreview h2, .post .contentpreview .quote {
 	line-height: normal;
 	vertical-align: middle;
 	margin: 0;
 }
-
 .post.entry .contentpreview .contentpreview_center {
 	vertical-align: middle;
 	line-height: 220px;
 	margin: 0;
 }
+.post.quote .contentpreview .contentpreview_center {
+	vertical-align: middle;
+	line-height: 240px;
+	margin: 0;
+	font-style: italic;
+	font-size: 120%;
+}
 
-.post .contentpreview .contentpreview_center .contentpreview_content {
+/* inside the contentpreview_center element - stuff that would be in the contentpreview container, but can't because it needs formatting */
+.post .contentpreview .contentpreview_center .contentpreview_content, .post .contentpreview .contentpreview_center .quote {
 	display: inline-block;
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0;
 }
 
 .post .contentpreview a {
@@ -179,11 +186,14 @@ img {
 	text-align: left;
 }
 
-.post.entry .contentpreview .meta {
+.post.entry .contentpreview .meta, .post.quote .contentpreview .meta {
 	line-height: normal;
 	margin: 0 5px 0 0;
 	font-style: italic;
 	text-align: right;
+}
+.post.quote .contentpreview .meta {
+	font-style: normal;
 }
 
 /* Photos in multiple elements */

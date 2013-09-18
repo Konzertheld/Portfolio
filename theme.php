@@ -168,11 +168,13 @@ class Portfolio extends Theme
 			}
 			$filters['content_type'][] = Post::type( 'photosets' );
 			$filters['content_type'][] = Post::type( 'entry' );
+			$filters['content_type'][] = Post::type( 'quote' );
 		} else {		
 			// Cater for other pages like /page/1 which don't use presets yet
 			if ( isset( $filters['content_type'] ) ) {
 				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
 				$filters['content_type'][] = Post::type( 'photoset' );
+				$filters['content_type'][] = Post::type( 'quote' );
 			}
 		}
 		return $filters;
