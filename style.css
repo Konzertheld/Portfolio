@@ -119,6 +119,10 @@ img {
 	background: none;
 }
 
+.post.entry {
+	width: 590px;
+}
+
 .post .contentpreview {
 	max-width:260px;
 	max-height:260px;
@@ -136,14 +140,30 @@ img {
 	max-height: 280px;
 }
 
-.post .contentpreview iframe {
-	max-width: 260px;
+.post.entry .contentpreview {
+	width: 570px;
+	max-width: 570px;
+	height: 100%;
+}
+
+.post.entry .contentpreview iframe {
+	max-width: 570px;
 }
 
 .post .contentpreview h2, .post .contentpreview .contentpreview_content {
 	line-height: normal;
 	vertical-align: middle;
 	margin: 0;
+}
+
+.post.entry .contentpreview .contentpreview_center {
+	vertical-align: middle;
+	line-height: 220px;
+	margin: 0;
+}
+
+.post .contentpreview .contentpreview_center .contentpreview_content {
+	display: inline-block;
 }
 
 .post .contentpreview a {
@@ -155,14 +175,15 @@ img {
 	vertical-align: top;
 }
 
-.post.entry .contentpreview .contentpreview_center {
-	vertical-align: middle;
-	line-height: 240px;
-	margin: 0;
+.post.entry .contentpreview h2 {
+	text-align: left;
 }
 
-.post .contentpreview .contentpreview_center .contentpreview_content {
-	display: inline-block;
+.post.entry .contentpreview .meta {
+	line-height: normal;
+	margin: 0 5px 0 0;
+	font-style: italic;
+	text-align: right;
 }
 
 /* Photos in multiple elements */
