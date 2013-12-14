@@ -30,13 +30,8 @@ img {
 
 #header {
 	width: 100%;
-	min-height: 150px;
-	background-color: #222;
+	background-color: #1a1a1a;
 	text-align: center;
-}
-#homelogo img {
-	margin-top: 10px;
-	height: 180px;
 }
 
 #menu {
@@ -51,7 +46,7 @@ img {
 }
 
 .contentarea {
-	background-color: #222;
+	background-color: #1a1a1a;
 	padding: 30px;
 }
 
@@ -99,39 +94,87 @@ img {
 }
 
 #menu ol li.active a{
-	background-color:#222;
+	background-color:#1a1a1a;
 }
 
 /* Style multiple post */
-
+/* post element - what makes the actual blocks on the site */
 .post {
+	margin:0 0 20px 2%;
 	height:280px;
-	width:280px;
-	margin:0 0 20px 30px;
+	line-height:280px;
+	width: 23%;
+	max-width: 280px;
 	display:inline-block;
 	float:left;
 	text-align:center;
-	line-height:280px;
-	background-color: #222;
+	background-color: #1a1a1a;
+}
+.post.entry, .post.quote {
+	width: 48%;
+	max-width: 590px;
+}
+.post.photo {
+	background: none;
 }
 
+/* contentpreview element - inside the post to give room for formats */
 .post .contentpreview {
-	max-width:260px;
-	max-height:260px;
-	vertical-align:middle;
 	display:inline-block;
+	max-width: 90%;
+	max-height: 260px;
+	line-height: 260px;
+	vertical-align:middle;
 	margin:0;
-	padding:0;
+	padding: 0;
 	overflow:hidden;
 	word-wrap:break-word;
-	line-height:260px;
+}
+.post.entry .contentpreview, .post.quote .contentpreview {
+	height: 100%;
+	padding: 0px 10px 0px 10px;
 }
 
-.post .contentpreview iframe {
-	max-width: 260px;
+/* inside the contentpreview element - the actual content, individually designed per content type */
+.post .contentpreview h2, .post .contentpreview .quote {
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0;
+}
+.post.entry .contentpreview .contentpreview_center {
+	vertical-align: middle;
+	line-height: 220px;
+	margin: 0;
+}
+.post.quote .contentpreview .contentpreview_center {
+	vertical-align: middle;
+	line-height: 240px;
+	margin: 0;
+	font-style: italic;
+	font-size: 120%;
 }
 
-.post .contentpreview h2, .post .contentpreview .contentpreview_content {
+.post.photo .contentpreview {
+	max-height: 280px;
+}
+
+.post.entry .contentpreview iframe {
+	max-width: 90%;
+}
+
+@media screen and (max-width: 800px) {
+	.post {
+		margin: 10px 1%;
+		width: 48%;
+	}
+	.post.entry {
+		width: 98%;
+	}
+}
+
+/* inside the contentpreview_center element - stuff that would be in the contentpreview container, but can't because it needs formatting */
+.post .contentpreview .contentpreview_center .contentpreview_content, .post .contentpreview .contentpreview_center .quote {
+	display: inline-block;
 	line-height: normal;
 	vertical-align: middle;
 	margin: 0;
@@ -146,14 +189,18 @@ img {
 	vertical-align: top;
 }
 
-.post.entry .contentpreview .contentpreview_center {
-	vertical-align: middle;
-	line-height: 240px;
-	margin: 0;
+.post.entry .contentpreview h2 {
+	text-align: left;
 }
 
-.post .contentpreview .contentpreview_center .contentpreview_content {
-	display: inline-block;
+.post.entry .contentpreview .meta, .post.quote .contentpreview .meta {
+	line-height: normal;
+	margin: 0 5px 0 0;
+	font-style: italic;
+	text-align: right;
+}
+.post.quote .contentpreview .meta {
+	font-style: normal;
 }
 
 /* Photos in multiple elements */
@@ -165,9 +212,10 @@ img {
 }
 
 .post .contentpreview img {
-	max-width: 260px;
+	max-width: 90%;
 	max-height: 260px;
 	vertical-align: middle;
+	border: 10px solid #1a1a1a;
 }
 
 /* Shrink photos in multiple photosets a bit more to make room for the title */
@@ -189,7 +237,7 @@ img {
 	padding: 0;
 	width: 100%;
 	height: 120px;
-	background-color: #222;
+	background-color: #1a1a1a;
 	text-align: center;
 	overflow: hidden;
 }

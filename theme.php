@@ -1,5 +1,4 @@
 <?php
-namespace Habari;
 /**
  * Portfolio Habari Theme
  * by Konzertheld
@@ -39,6 +38,9 @@ class Portfolio extends Theme
 		Stack::add('template_header_javascript', Site::get_url('scripts') . '/jquery.js', 'jquery');
 		if(!$this->multipleview && array_key_exists('photoset', Post::list_active_post_types())) {
 			Stack::add('template_header_javascript', $theme->get_url() . '/photoset.js', 'photoset-js', 'jquery');
+		}
+		if($this->multipleview && array_key_exists('photo', Post::list_active_post_types())) {
+			Stack::add('template_footer_javascript', $theme->get_url() . 'photo.js', 'photo-js', 'jquery');
 		}
 	}
 	
@@ -155,16 +157,27 @@ class Portfolio extends Theme
 	}
 	
 	/**
-	 * Add photosets to the output (0.10 method). The 'flow' preset is what all frontend output presets are based on.
-	 * @todo: Load preset types from options
+	 * Add photosets to the output (0.9 method)
 	 */
-	public function filter_posts_get_update_preset($preset_parameters, $presetname, $paramarray)
+	public function filter_template_user_filters( $filters ) 
 	{
-		if($presetname == 'flow') {
-			$content_type = isset($preset_parameters['content_type']) ? Utils::single_array($preset_parameters['content_type']) : array();
-			$content_type[] = 'photoset';
-			$preset_parameters['content_type'] = $content_type;
+		// Cater for the home page which uses presets as of d918a831
+		if ( isset( $filters['preset'] ) ) {
+			if(isset($filters['content_type'])) {
+				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
+			}
+			$filters['content_type'][] = Post::type( 'photosets' );
+			$filters['content_type'][] = Post::type( 'entry' );
+			$filters['content_type'][] = Post::type( 'quote' );
+		} else {		
+			// Cater for other pages like /page/1 which don't use presets yet
+			if ( isset( $filters['content_type'] ) ) {
+				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
+				$filters['content_type'][] = Post::type( 'photoset' );
+				$filters['content_type'][] = Post::type( 'quote' );
+			}
 		}
+		return $filters;
 	}
 }
 ?>

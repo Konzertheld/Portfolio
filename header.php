@@ -1,4 +1,3 @@
-<?php namespace Habari; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +6,8 @@
 	<meta name="generator" content="Habari <?php echo Version::get_habariversion() ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php Site::out_url( 'theme' ); ?>/style.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="<?php Site::out_url( 'theme' ); ?>/user.css" media="screen" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<?php if(is_file(Site::get_dir( 'theme' ) . '/user.css')): ?><link rel="stylesheet" type="text/css" href="<?php Site::out_url( 'theme' ); ?>/user.css" media="screen" /><?php endif; ?>
 	<?php echo $theme->header(); ?>
 </head>
 <body>
