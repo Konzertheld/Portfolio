@@ -28,9 +28,22 @@ class Portfolio extends Theme
 	/**
 	 * Create theme options
 	 */
-	public function action_theme_ui( $theme )
+	public function action_theme_ui($theme)
 	{
+		$ui = new FormUI(__CLASS__);
 		
+		// Get the available content types
+		$types = Post::list_active_post_types();
+		unset($types['any']);
+		$types = array_flip($types);
+		$ui->append('select', 'content_types', __CLASS__ . '__content_types', _t('Content Types to display (content types not selected here are only available via permalink)', __CLASS__ ));
+		$ui->content_types->size = count($types);
+		$ui->content_types->multiple = true;
+		$ui->content_types->options = $types;
+		
+		// Save
+		$ui->append( 'submit', 'save', _t( 'Save', __CLASS__ ) );
+		$ui->out();
 	}
 	
 	public function action_template_header($theme)
@@ -161,22 +174,10 @@ class Portfolio extends Theme
 	 */
 	public function filter_template_user_filters( $filters ) 
 	{
-		// Cater for the home page which uses presets as of d918a831
-		if ( isset( $filters['preset'] ) ) {
-			if(isset($filters['content_type'])) {
-				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
-			}
-			$filters['content_type'][] = Post::type( 'photosets' );
-			$filters['content_type'][] = Post::type( 'entry' );
-			$filters['content_type'][] = Post::type( 'quote' );
-		} else {		
-			// Cater for other pages like /page/1 which don't use presets yet
-			if ( isset( $filters['content_type'] ) ) {
-				$filters['content_type'] = Utils::single_array( $filters['content_type'] );
-				$filters['content_type'][] = Post::type( 'photoset' );
-				$filters['content_type'][] = Post::type( 'quote' );
-			}
-		}
+		// In 0.9, everything is crappy, because we have half-implemented presets.
+		// So we let the user determine types and just screw (aka override) everything.
+		$opts = Options::get_group(__CLASS__);
+		$filters['content_type'] = $opts['content_types'];
 		return $filters;
 	}
 }
