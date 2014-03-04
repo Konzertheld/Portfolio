@@ -117,6 +117,16 @@ img {
 .post.photo {
 	background: none;
 }
+.post.photo.highlighted {
+	max-height: none;
+	max-width: none;
+	height: auto;
+	width: auto;
+}
+.post.photo.highlighted img {
+	max-height: none;
+	max-width: none;
+}
 
 /* contentpreview element - inside the post to give room for formats */
 .post .contentpreview {
@@ -156,6 +166,10 @@ img {
 
 .post.photo .contentpreview {
 	max-height: 280px;
+}
+.post.photo.highlighted .contentpreview {
+	max-height: none;
+	max-width: 820px;
 }
 
 .post.entry .contentpreview iframe {

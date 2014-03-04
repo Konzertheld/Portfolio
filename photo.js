@@ -22,27 +22,13 @@ function refreshHighlight()
 {
 	if(highlightState) {
 		highlightPhoto.attr("src", highlightPhoto.parent().attr("href"));
-		// highlightPhoto.attr("src", highlightPhoto.attr("src").replace(".deriv/", ""));
-		// highlightPhoto.attr("src", highlightPhoto.attr("src").replace(".thumbnail/", ""));
 		highlightPhoto.attr("width", 800);
-		highlightPhoto.css("max-width", "none");
-		highlightPhoto.css("max-height", "none");
-		highlightPhoto.parent().parent().css("max-width", "820px");
-		highlightPhoto.parent().parent().css("max-height", "none");
-		highlightPhoto.parent().parent().parent().css("height","auto");
-		highlightPhoto.parent().parent().parent().css("width","auto");
-		highlightPhoto.parent().parent().parent().css("max-height","none");
-		highlightPhoto.parent().parent().parent().css("max-width","none");
+		highlightPhoto.parent().parent().parent().addClass("highlighted");
 		$(window).scrollTop(highlightPhoto.offset().top - 20);
 	}
 	else {
 		highlightPhoto.removeAttr("width");
-		highlightPhoto.css("max-width", "");
-		highlightPhoto.css("max-height", "");
-		highlightPhoto.parent().parent().css("max-width", "");
-		highlightPhoto.parent().parent().css("max-height", "");
-		highlightPhoto.parent().parent().parent().css("height", "");
-		highlightPhoto.parent().parent().parent().css("width", "");
+		highlightPhoto.parent().parent().parent().removeClass("highlighted");
 		$(window).scrollTop(0);
 	}
 }
