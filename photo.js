@@ -31,6 +31,8 @@ function refreshHighlight()
 		highlightPhoto.parent().parent().css("max-height", "none");
 		highlightPhoto.parent().parent().parent().css("height","auto");
 		highlightPhoto.parent().parent().parent().css("width","auto");
+		highlightPhoto.parent().parent().parent().css("max-height","none");
+		highlightPhoto.parent().parent().parent().css("max-width","none");
 		$(window).scrollTop(highlightPhoto.offset().top - 20);
 	}
 	else {
