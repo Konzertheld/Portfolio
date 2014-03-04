@@ -22,7 +22,12 @@ function refreshHighlight()
 {
 	if(highlightState) {
 		highlightPhoto.attr("src", highlightPhoto.parent().attr("href"));
-		highlightPhoto.attr("width", 800);
+		if(window.innerWidth > 800) {
+			highlightPhoto.attr("width", 800);
+		}
+		else {
+			highlightPhoto.attr("width", 0.9 * window.innerWidth);
+		}
 		highlightPhoto.parent().parent().parent().addClass("highlighted");
 		$(window).scrollTop(highlightPhoto.offset().top - 20);
 	}
