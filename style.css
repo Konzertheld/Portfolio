@@ -244,6 +244,9 @@ img {
 	vertical-align: middle;
 	border: 10px solid #1a1a1a;
 }
+.post.entry img {
+	border: none;
+}
 
 /* Shrink photos in multiple photosets a bit more to make room for the title */
 
