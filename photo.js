@@ -1,21 +1,29 @@
 var highlightPhoto;
 var highlightState = false;
-$(".singlephoto_link").click(function(ev) {
-	ev.preventDefault();
-	image = $(ev.target);
-	if(image.is(highlightPhoto)) {
-		highlightState = !highlightState;
+
+function hook_to_images() {
+	$(".singlephoto_link").unbind('click').click(function(ev) {
+		ev.preventDefault();
+		image = $(ev.target);
+		if(image.is(highlightPhoto)) {
+			highlightState = !highlightState;
+			refreshHighlight();
+			return;
+		}
+		else if(highlightPhoto != undefined) {
+			highlightState = false;
+			refreshHighlight();
+		}
+		
+		highlightPhoto = image;
+		highlightState = true;
 		refreshHighlight();
-		return;
-	}
-	else if(highlightPhoto != undefined) {
-		highlightState = false;
-		refreshHighlight();
-	}
-	
-	highlightPhoto = image;
-	highlightState = true;
-	refreshHighlight();
+	});
+}
+hook_to_images();
+
+$('#imagebox').bind("DOMSubtreeModified",function(){
+	hook_to_images();
 });
 
 function refreshHighlight()
